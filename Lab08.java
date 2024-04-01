@@ -1,6 +1,8 @@
 /*
 Instructions
-Write a program that uses a SinglyLinkedList that gets populated by prime numbers from 0 to n. Then move the prime numbers that has the digit '3' into another linked list. After that find the sum of numbers in the second list.  (n should be less than 1,000,000).
+Write a program that uses a SinglyLinkedList that gets populated by prime numbers from 0 to n.
+Then move the prime numbers that has the digit '3' into another linked list.
+After that find the sum of numbers in the second list.  (n should be less than 1,000,000).
 
 Due date is extended till Monday 04/10/2023 11:59 pm.
 For example, the sum of the prime numbers (with 3 digit) between 0 and n=100 is (3+ 13+  23+ 31+ 37+ 43+  53+73+83 )= 359.
@@ -12,6 +14,8 @@ For example, the sum of the prime numbers (with 3 digit) between 0 and n=100 is 
  */
 class Lab08Demo
 {
+    LinkedList firstList = new LinkedList();
+    LinkedList secondList = new LinkedList();
     public static boolean isPrime(int number) {
         if (number <= 1) {
             return false;
@@ -24,20 +28,34 @@ class Lab08Demo
         return true;
     }
 
-    public static void printPrimes(int n) {
+    public  void addPrimesToList(int n) {
+        int sum = 0;
         System.out.println("Prime numbers from 0 to " + n + ":");
         for (int i = 0; i <= n; i++) {
-            if (isPrime(i)) {
-                System.out.print(i + " ");
+            int val = i;
+            if (isPrime(val)) {
+                firstList.append(new Node(val));
+                String valAsString = String.valueOf(val);
+                if (valAsString.contains("3")) {
+                    secondList.append(new Node(val));
+                    sum += val;
+
+                }
+
             }
+
         }
-        System.out.println();
+        System.out.println("Sum Secondlist equal val:" + sum);
     }
 
 
 
     public static void main(String[] args)
     {
+        Lab08Demo demo = new Lab08Demo();
+        demo.addPrimesToList(50);
+
+
 
     }
 
