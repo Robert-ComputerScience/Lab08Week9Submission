@@ -1,16 +1,10 @@
 /*
-Instructions
+
 Write a program that uses a SinglyLinkedList that gets populated by prime numbers from 0 to n.
-Then move the prime numbers that has the digit '3' into another linked list.
+
 After that find the sum of numbers in the second list.  (n should be less than 1,000,000).
-
-Due date is extended till Monday 04/10/2023 11:59 pm.
-For example, the sum of the prime numbers (with 3 digit) between 0 and n=100 is (3+ 13+  23+ 31+ 37+ 43+  53+73+83 )= 359.
-
-
-
-
-
+Prime number answer from 0 to 60
+Second list is equal to 150
  */
 class Lab08Demo
 {
@@ -28,6 +22,7 @@ class Lab08Demo
         return true;
     }
 
+    // move the prime numbers that has the digit '3' into another linked list.
     public  void addPrimesToList(int n) {
         int sum = 0;
         System.out.println("Prime numbers from 0 to " + n + ":");
@@ -48,21 +43,12 @@ class Lab08Demo
         System.out.println("Sum Secondlist equal val:" + sum);
     }
 
-
-
     public static void main(String[] args)
     {
         Lab08Demo demo = new Lab08Demo();
         demo.addPrimesToList(50);
 
-
-
     }
-
-
-
-
-
 }
 class Node {
     public int data;
@@ -105,8 +91,6 @@ class LinkedList {
         }
     }
 
-
-
     public void insertAfter(Node currentNode, Node newNode) {
         if (head == null) {
             head = newNode;
@@ -121,7 +105,6 @@ class LinkedList {
             currentNode.next = newNode;
         }
     }
-
 
     public void removeAfter(Node currentNode) {
         if (currentNode == null && head != null) {
